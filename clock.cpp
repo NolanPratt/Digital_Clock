@@ -75,7 +75,7 @@ tuple<int,int,int> increment12Hours(int hour, int min, int sec) {
 		min = 0;
 	}
 	// Check for 12 hour mark
-	if (hour == 13) { // Updated conditional to account for 12 hour count and refresh to 1 o'clock instead of 0 to 1
+	if (hour == 13) {
 		hour = 1;
 	}
 	// Return tuple of size 3 that contains the updated hour, minute, and second values
@@ -126,8 +126,8 @@ void clockDisplay(string time12, string time24, string timeOfDay) {
 string checkTimeOfDay(int hour12, int hour24) {
 	string timeOfDay;
 
-	if ((hour24 - hour12) <= 0 && hour12 != 12 || hour24 == 0) { // Updated conditional to account for afternoon and midnight edge 
-		timeOfDay = " A M ";									 // cases to correctly display time of day when rolling over
+	if ((hour24 - hour12) <= 0 && hour12 != 12 || hour24 == 0) {
+		timeOfDay = " A M ";
 	}
 	else if ((hour24 - hour12) > 0) {
 		timeOfDay = " P M ";
@@ -191,7 +191,7 @@ tuple<int,int,int,int,int,int> menuChoice(int hour12, int min12, int sec12, int 
 int main() {
 
 	// Displayed time components
-	int hour12 = 12, min12 = 00, sec12 = 00, hour24 = 00, min24 = 00, sec24 = 00; // Updated hour12 starting time to reflect initial 12AM time
+	int hour12 = 12, min12 = 00, sec12 = 00, hour24 = 00, min24 = 00, sec24 = 00;
 	char input = '0';
 
 	// Format time components for 12 hour clock
